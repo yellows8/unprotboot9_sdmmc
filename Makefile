@@ -24,7 +24,7 @@ INCLUDES	:=	include
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-mthumb -mthumb-interwork -fpic
+ARCH	:=	-marm -fpic
 
 CFLAGS	:=	-g -Wall -Os\
  		-march=armv5te -mtune=arm946e-s -fomit-frame-pointer\

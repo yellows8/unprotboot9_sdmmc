@@ -2,8 +2,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include <3ds.h>
-
+#include "types.h"
 #include "unprotboot9_sdmmc.h"
 
 s32 unprotboot9_sdmmc_initialize()

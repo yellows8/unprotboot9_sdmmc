@@ -5,6 +5,8 @@
 #include "types.h"
 #include "unprotboot9_sdmmc.h"
 
+void unprotboot9_sdmmc_initialize_asm();
+
 s32 unprotboot9_sdmmc_initialize()
 {
 	void (*funcptr_cleardtcm)() = (void*)0xffff01b0;
@@ -13,6 +15,8 @@ s32 unprotboot9_sdmmc_initialize()
 
 	*((u16*)0x10000020) |= 0x200;//If not set, the hardware will not detect any inserted card on the sdbus.
 	*((u16*)0x10000020) &= ~0x1;//If set while bitmask 0x200 is set, a sdbus command timeout error will occur during sdbus init.
+
+	unprotboot9_sdmmc_initialize_asm();
 
 	funcptr_cleardtcm();
 	*((u32*)(0xfff0009c+0x1c)) = 1;//Initialize the sdmmc busid.

@@ -2,7 +2,7 @@
 
 //These return 0 for success, non-zero for error.
 
-//Using this requires that the DTCM at 0xfff00000 is accessible.
+//Using this requires that the DTCM at 0xfff00000 is accessible. You can either disable MPU, or setup a MPU region for it.
 
 typedef enum {
 	unprotboot9_sdmmc_deviceid_sd = 0x200,
